@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>联结消消乐</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sky-lines"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <button class="icon-button" id="homeBtn" aria-label="返回关卡地图">⌂</button>
+      <div class="brand"><img src="assets/unicom-logo.svg" alt="联通标识" /><span>联结消消乐</span></div>
+      <button class="icon-button" id="soundBtn" aria-label="切换音效">♪</button>
+    </header>
+
+    <section id="mapScreen" class="screen map-screen">
+      <div class="hero-card">
+        <span class="eyebrow">连结美好 · 每一步都有惊喜</span>
+        <h1>点亮每一份联结</h1>
+        <p>交换相邻的信号糖果，完成 66 个温暖关卡。</p>
+        <button id="continueBtn" class="primary-btn">开始连结</button>
+      </div>
+      <div class="route-wrap">
+        <div class="route"></div>
+        <div id="levelMap" class="level-map" aria-label="关卡地图"></div>
+      </div>
+      <p class="map-tip">每完成一段旅程，都会收到一份小小的联结惊喜。</p>
+    </section>
+
+    <section id="gameScreen" class="screen game-screen hidden">
+      <div class="game-head">
+        <div class="level-label"><span id="levelNo">01</span><small>第 <b id="levelText">1</b> 关</small></div>
+        <div class="goal-card"><span class="target-token" id="goalToken">●</span><div><small>收集信号</small><strong><b id="goalNow">0</b> / <b id="goalNeed">20</b></strong></div></div>
+        <div class="moves-card"><small>剩余步数</small><strong id="moves">20</strong></div>
+      </div>
+      <div class="progress"><i id="progressFill"></i></div>
+      <div class="board-wrap"><div id="board" class="board" aria-label="消消乐棋盘"></div></div>
+      <div class="game-footer">
+        <div class="hint-copy"><span>⌁</span> 连成 3 个即可消除</div>
+        <button id="hintBtn" class="hint-btn">提示</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div id="modalArt" class="modal-art">✦</div>
+      <span id="modalKicker" class="eyebrow">连结成功</span>
+      <h2 id="modalTitle">这一关，刚刚好！</h2>
+      <p id="modalText"></p>
+      <div class="modal-actions"><button id="modalSecondary" class="secondary-btn">返回地图</button><button id="modalPrimary" class="primary-btn">下一关</button></div>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
